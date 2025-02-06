@@ -6,9 +6,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   rows.forEach((row) => {
     const cells = row.children;
-    const secondCol = cells[1];
-    const copy = secondCol.cloneNode(true);
 
-    row.insertBefore(copy, cells[4]);
+    if (cells.length >= 5) {
+      const secondCol = cells[1];
+      const copy = secondCol.cloneNode(true);
+
+      row.insertBefore(copy, cells[4]);
+    }
   });
 });
